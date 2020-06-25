@@ -1,0 +1,203 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.login-main-container{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    margin:0 auto;
+
+}
+
+.carousel-container, .login-container{
+    
+    width:50%;
+}
+
+.carousel-img{
+    height:500px;
+    
+}
+
+.container-playlist{
+    margin: 10px 50px;
+    display: flex;
+    flex-direction:column;
+}
+
+.video-playlist{
+    margin-bottom: 20px;
+}
+
+.principal-player{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.accept-policy{
+    margin-bottom: 20px;
+}
+.principal-video{
+    width:700px;
+    height:80%;
+}
+
+#video_player{
+    display:flex;
+    flex-direction:row;
+    line-height: 0;
+    font-size: 0;
+    background: #000;
+}
+ #video_player video, #video_player figcaption{
+/*     display: table-cell;*/
+     vertical-align: top;
+ }
+
+
+#video_player figcaption{
+    width: 30%;
+}
+
+ #video_player figcaption a{
+     display:block;
+     opacity: .5;
+     transition: 1s opacity;
+ }
+
+ #video_player figcaption a img, figure video {
+    width: 100%;
+    height: auto;
+    }
+
+#video_player figcaption a:hover {
+    opacity: 1;
+    }
+
+@media (max-width: 700px) {
+    #video_player video,
+    #video_player figcaption {
+        display: table-row;
+    }
+
+    #video_player figcaption a {
+        display: inline-block;
+        width: 33.33%;
+        }
+}
+
+.lightboxcontainer {
+    width: 100%;
+    text-align: left;
+}
+
+.lightboxleft {
+    width: 40%;
+    float: left;
+}
+
+.lightboxright {
+    width: 60%;
+    float: left;
+}
+
+    .lightboxright iframe {
+        min-height: 390px;
+    }
+
+.divtext {
+    margin: 36px;
+}
+
+@media (max-width: 800px) {
+    .lightboxleft {
+        width: 100%;
+    }
+
+    .lightboxright {
+        width: 100%;
+    }
+
+    .divtext {
+        margin: 12px;
+    }
+}
+
+.scrollable-bun{
+    height:450px;
+    width:30%;
+    overflow-y:auto;
+}
+
+.video-for-tutoriale{
+    width: 70%;
+}

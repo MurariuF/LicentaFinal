@@ -1,0 +1,77 @@
+﻿<div class="container">
+    <div class="card">
+        <div class="card-header text-center">Calculator Rata Metabolismului Bazal si Total Caloric necesar</div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label>Varsta: </label>
+                    <input type="number" id="varsta" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Greutate: </label>
+                    <input type="number" id="greutate" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Inaltime: </label>
+                    <input type="number" id="inaltime" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Genul: </label>
+                    <select id="select1">
+                        <option selected-disabled>--Selectati sexul--</option>
+                        <option value="-161">Feminin</option>
+                        <option value="5">Masculin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nivel activitate: </label>
+                    <select id="select2">
+                        <option selected-disabled>--Selectati nivelul activitatii--</option>
+                        <option value="1.2">Sedentar</option>
+                        <option value="1.375">Antrenament usor de 1-3 ori pe saptamana</option>
+                        <option value="1.55">Antrenament usor de 3-5 ori pe saptamana</option>
+                        <option value="1.725">Antrenament usor de 6-7 ori pe saptamana</option>
+                        <option value="1.9">Antrenament GREU + munca obositoare</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-succes" value="calculate" onclick="getAllValues()">
+                    Calculeaza
+                    </button>
+                </div>
+
+                <div class="form-group">
+                        <label>Rata Metabolismului Bazal: </label>
+                        <p id="valoareRMB">Aici rata metabolismului bazal</p>
+                </div>
+                <div class="form-group">
+                        <label>Totalul Necesar Caloric: </label>
+                        <p id="valoareTNC">Aici totalul caloric necesar</p>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/_vendor/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function getAllValues() {
+        var inaltimea = Number(document.getElementById('inaltime').value);
+        var greutatea = Number(document.getElementById('greutate').value);
+        var varsta = Number(document.getElementById('varsta').value);
+        var gen = Number(document.getElementById('select1').value);
+        var antrenament = Number(document.getElementById('select2').value);
+
+        var RMB = (10 * greutatea) + (6.25 * inaltimea) - (5 * varsta) + gen;
+        var NCZ = RMB * antrenament;
+
+        document.getElementById('valoareRMB').innerHTML = RMB;
+        document.getElementById('valoareTNC').innerHTML = NCZ;
+    }
+    
+
+ 
+</script>

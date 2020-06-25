@@ -1,0 +1,149 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.login-main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#video_player {
+    display: table;
+    line-height: 0;
+    font-size: 0;
+    background: #000;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#video_container {
+    position: relative;
+}
+
+#video_player div,
+#video_player figcaption {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#video_container video {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+#video_player figcaption {
+    width: 25%;
+}
+
+    #video_player figcaption a {
+        display: block;
+    }
+
+    #video_player figcaption a {
+        opacity: .5;
+        transition: 1s opacity;
+    }
+
+        #video_player figcaption a img,
+        figure video {
+            width: 100%;
+            height: auto;
+        }
+
+        #video_player figcaption a.currentvid,
+        #video_player figcaption a:hover,
+        #video_player figcaption a:focus {
+            opacity: 1;
+        }
+
+@media (max-width: 700px) {
+    #video_player video,
+    #video_player figcaption {
+        display: table-row;
+    }
+
+    #video_container {
+        padding-top: 56.25%;
+    }
+
+    #video_player figcaption a {
+        display: inline-block;
+        width: 33.33%;
+    }
+}

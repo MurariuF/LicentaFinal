@@ -1,0 +1,81 @@
+﻿@model List<Detalii>
+    <link href="~/lib/bootstrap/dist/js/toastr.css" rel="stylesheet" />
+
+<h2>Toate detaliile</h2>
+<a class="btn btn-info" asp-action="Create">Adauga noi date</a>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Varsta</td>
+            <td>Greutatea</td>
+            <td>Inaltime</td>
+            <td>Data</td>
+            <td>IMC</td>
+            <td>Grad</td>
+            <td>Link Video</td>
+            <td colspan="2">Optiuni</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var detalii in Model)
+        {
+            <tr>
+                <td>@detalii.Varsta</td>
+                <td>@detalii.Greutate</td>
+                <td>@detalii.Inaltimea</td>
+                <td>@detalii.Data</td>
+                <td id="indice">@detalii.Rezultat1.ToString("0.00")</td>
+                <td>@detalii.Rezultat2</td>
+                
+                <td><a  href="" id="linkTutoriale">Video Aici</a></td>
+                <td>
+                    <a class="btn btn-primary" asp-action="edit" asp-route-id="@detalii.Id">
+                        Editare
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" id="stergere" asp-action="Delete" asp-route-Id="@detalii.Id" >
+                        Stergere
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/lib/bootstrap/dist/js/toastr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#stergere").click(function () {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": 0,
+                "extendedTimeOut": 0,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+                "tapToDismiss": false
+            }
+
+            toastr["warning"]("Datele au fost sterse")
+        });
+    })
+</script>
+<script type="text/javascript">
+    var IMC = Number(document.getElementById('indice').value);
+    
+    if (IMC > 10) {
+        document.getElementById('linkTutoriale').setAttribute("href", "https://localhost:44315/Home/Tutoriale#primaparte");
+    }
+    else { document.getElementById('linkTutoriale').setAttribute("href", "https://localhost:44315/Home/Tutoriale#introducere");}
+</script>

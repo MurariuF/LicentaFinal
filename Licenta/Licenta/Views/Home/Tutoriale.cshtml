@@ -1,0 +1,84 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+
+<div class="container-playlist">
+    
+    <div class="video-playlist">
+        <div class="first-video-playlist-header">
+            <a id="introducere" href="#introducere">Introducere</a>
+        </div>
+        <figure id="video_player">
+            <video class="video-for-tutoriale" controls poster="~/Images/introducere.PNG">
+                <source src="/videos/Partea1/0.2PrimaPagina.webm" type="video/webm" />
+            </video>
+                <figcaption class="scrollable-bun">
+                    <a href="~/videos/Partea1/0.3Primapagina.mp4"><img src="~/Images/PrincipiileNutritiei.JPG" alt="Principiile Nutritiei"></a>
+                    <a href="~/videos/Partea1/1.Calorie.mp4"><img src="~/Images/Caloriile.JPG" alt="Caloriile"></a>
+                    <a href="~/videos/Partea1/2.Macronutrienti.mp4"><img src="~/Images/Macronutrientii.JPG" alt="Macronutrientii"></a>
+                    <a href="~/videos/Partea1/3.Proteine.mp4"><img src="~/Images/Proteine.PNG" alt="Proteine"></a>
+                    <a href="~/videos/Partea1/4.NrProteine.mp4"><img src="~/Images/NrProteine.PNG" alt="Cate proteine trebuie sa mancam?"></a>
+                    <a href="~/videos/Partea1/5.Grasimi.mp4"><img src="~/Images/Grasimi.PNG" alt="Grasimi"></a>
+                    <a href="~/videos/Partea1/7.Carbohidratii.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                    <a href="~/videos/Partea1/8.Carbo2.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                    <a href="~/videos/Partea1/9.Carbo3.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                    <a href="~/videos/Partea1/10.NrCarbo.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                    <a href="~/videos/Partea1/11.PlanificareaMeselor.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                    <a href="~/videos/Partea1/12.PlanificareaProteinelor.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                </figcaption>
+        </figure>
+    </div>
+    <div class="video-playlist">
+        <div class="first-video-playlist-header">
+            <a id="primaParte" href="#primaparte">Partea I</a>
+        </div>
+        <figure id="video_player">
+            <video class="video-for-tutoriale" controls poster="nambia1.jpg">
+                <source src="~/videos/Partea2/1.CumSaDeterminiCaloriile.mp4" type="video/mp4">
+
+            </video>
+            <figcaption class="scrollable-bun">
+                <a href="~/videos/Partea2/2.CumSaCalculeziCaloriile.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                <a href="~/videos/Partea2/3.CateProteine.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                <a href="~/videos/Partea2/4.CatiCarbohidrati.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+                <a href="/videos/Partea2/5.CateGrasimi.mp4"><img src="~/Images/Grasimi.PNG" alt=""></a>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="video-playlist">
+        <div class="first-video-playlist-header">
+            Va urma...
+        </div>
+        <figure id="video_player">
+            <video controls poster="nambia1.jpg">
+                <source src="~/videos/test2.mp4" type="video/mp4">
+
+            </video>
+            <figcaption>
+                <a href="nambia1.mp4"><img src="nambia1.jpg" alt="Nambia Timelapse 1"></a>
+            </figcaption>
+        </figure>
+    </div>
+
+</div>
+<script>
+    var video_player = document.getElementById("video_player");
+    var links = video_player.getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].onclick = handler;
+    }
+
+    function handler(e) {
+        e.preventDefault();
+        videotarget = this.getAttribute("href");
+        filename = videotarget.substr(0, videotarget.lastIndexOf('.')) || videotarget;
+        video = document.querySelector("#video_player video");
+        video.removeAttribute("controls");
+        source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".webm";
+        video.load();
+        video.play();
+    }
+</script>
+<script src="~/lib/html5lightbox/html5lightbox.js"></script>
+<script src="~/lib/_vendor/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/html5lightbox/jquery.js"></script>
